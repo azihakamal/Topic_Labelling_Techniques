@@ -69,7 +69,3 @@ Script for generating interactive and static visualizations from a trained BERTo
 17. visualize_gwdg.py
 
 Script that aggregates labeled datasets produced by the GWDG LLM labeling pipeline and generates summary visualizations. It combines multiple CSV files into a single dataset, calculates label frequencies, and produces charts such as bar plots to illustrate the distribution of thematic labels across articles while filtering out labeling errors. 
-
-18. train_bert_topk_ranker.py
-
-Script for training a BERT-based classifier with top-k ranking evaluation for article categorization. It trains a transformer model on labeled articles, splits the dataset by article ID to prevent data leakage, and evaluates predictions using top-k metrics such as precision@k, recall@k, and F1@k. The trained model, evaluation metrics, and predicted labels are saved for later analysis and comparison.
