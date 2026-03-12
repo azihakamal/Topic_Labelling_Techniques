@@ -107,7 +107,7 @@ def extract_articles(in_file, out_json=None, out_csv=None, tail_chars=250):
             "article": cur["text"].strip()
         })
 
-    # Save outputs if requested
+    # Save outputs
     if out_json:
         Path(out_json).write_text(json.dumps(articles, ensure_ascii=False, indent=2), encoding="utf-8")
 
@@ -127,7 +127,7 @@ for in_path in sorted(INPUT_DIR.glob("*.json")):
     base = in_path.stem                  # original name without extension
     out_csv = OUTPUT_DIR / f"{base}.csv" # keep same name, change extension
     try:
-        arts = extract_articles(in_path, out_csv=out_csv, tail_chars=250)  # adjust tail_chars if needed
+        arts = extract_articles(in_path, out_csv=out_csv, tail_chars=250)  # adjust tail_chars
         print(f"[OK] {in_path.name} -> {out_csv.name} ({len(arts)} articles)")
         count += 1
     except Exception as e:
